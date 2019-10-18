@@ -5,10 +5,7 @@
 
     <transfer name="Quote">
         <property name="signupNewsletter" type="bool"/>
-    </transfer>
-
-    <transfer name="spy_sales_order">
-        <property name="signupNewsletter" type="bool"/>
+        <property name="ip" type="string"/>
     </transfer>
 
 </transfers>
