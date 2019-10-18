@@ -7,7 +7,7 @@
         <property name="signupNewsletter" type="bool"/>
     </transfer>
 
-    <transfer name="spy_sales_order">
+    <transfer name="SpySalesOrder">
         <property name="signupNewsletter" type="bool"/>
     </transfer>
 
