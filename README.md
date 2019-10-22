@@ -8,3 +8,11 @@
 ```
 composer require fond-of-spryker/sales-newsletter-signup
 ```
+
+####Register
+```
+CustomerIpQuoteTransferExpanderPlugin() in QuoteDependencyProvider => getQuoteTransferExpanderPlugins()
+```
+```
+NewsletterSignupOrderExpanderPlugin() in SalesDependencyProvider => getOrderExpanderPreSavePlugins()
+```
