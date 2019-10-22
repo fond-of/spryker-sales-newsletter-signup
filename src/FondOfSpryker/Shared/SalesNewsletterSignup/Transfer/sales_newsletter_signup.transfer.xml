@@ -7,5 +7,3 @@
         <property name="signupNewsletter" type="bool"/>
         <property name="ip" type="string"/>
     </transfer>
-
-</transfers>
