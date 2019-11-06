@@ -7,7 +7,7 @@ use Spryker\Client\Kernel\AbstractPlugin;
 use Spryker\Client\Quote\Dependency\Plugin\QuoteTransferExpanderPluginInterface;
 
 /**
- * @method \FondOfSpryker\Client\SalesNewsletterSignup\PriceFactory getFactory()
+ * @method \FondOfSpryker\Client\SalesNewsletterSignup\SalesNewsletterSignupFactory getFactory()
  */
 class CustomerIpQuoteTransferExpanderPlugin extends AbstractPlugin implements QuoteTransferExpanderPluginInterface
 {
