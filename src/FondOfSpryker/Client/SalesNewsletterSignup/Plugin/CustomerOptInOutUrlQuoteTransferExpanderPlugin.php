@@ -15,7 +15,7 @@ class CustomerOptInOutUrlQuoteTransferExpanderPlugin extends AbstractPlugin impl
 {
     public const NEWSLETTER = 'newsletter';
     public const TOKEN = 'token';
-    
+
     /**
      * @param  \Generated\Shared\Transfer\QuoteTransfer  $quoteTransfer
      *
@@ -28,7 +28,7 @@ class CustomerOptInOutUrlQuoteTransferExpanderPlugin extends AbstractPlugin impl
             $newsletterService = $this->getFactory()->getNewsletterService();
             $params = [
                 self::NEWSLETTER => sprintf('%s/%s', $this->getFactory()->getCurrentLanguage(), self::NEWSLETTER),
-                self::TOKEN => sha1($customer->getEmail())
+                self::TOKEN => $this->getFactory()->getNewsletterService()->getHash($customer->getEmail())
             ];
 
             $quoteTransfer->setOptInUrl($newsletterService->getOptInUrl($params));
