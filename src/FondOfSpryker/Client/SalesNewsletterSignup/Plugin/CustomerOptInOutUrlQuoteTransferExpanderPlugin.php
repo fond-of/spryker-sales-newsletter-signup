@@ -13,9 +13,6 @@ use Spryker\Shared\Kernel\Store;
  */
 class CustomerOptInOutUrlQuoteTransferExpanderPlugin extends AbstractPlugin implements QuoteTransferExpanderPluginInterface
 {
-    public const NEWSLETTER = 'newsletter';
-    public const TOKEN = 'token';
-
     /**
      * @param  \Generated\Shared\Transfer\QuoteTransfer  $quoteTransfer
      *
@@ -27,8 +24,8 @@ class CustomerOptInOutUrlQuoteTransferExpanderPlugin extends AbstractPlugin impl
         if ($quoteTransfer->getSignupNewsletter() === true && $customer && $customer->getEmail()) {
             $newsletterService = $this->getFactory()->getNewsletterService();
             $params = [
-                self::NEWSLETTER => sprintf('%s/%s', $this->getFactory()->getCurrentLanguage(), self::NEWSLETTER),
-                self::TOKEN => $this->getFactory()->getNewsletterService()->getHash($customer->getEmail())
+                $newsletterService->getNewsletterParamName() => sprintf('%s/%s', $this->getFactory()->getCurrentLanguage(), $newsletterService->getNewsletterParamName()),
+                $newsletterService->getNewsletterTokenParamName() => $newsletterService->getNewsletterService()->getHash($customer->getEmail())
             ];
 
             $quoteTransfer->setOptInUrl($newsletterService->getOptInUrl($params));
