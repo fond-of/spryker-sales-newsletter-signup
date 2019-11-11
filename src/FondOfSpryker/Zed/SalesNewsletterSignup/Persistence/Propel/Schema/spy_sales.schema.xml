@@ -6,6 +6,7 @@
         <column name="ip" type="VARCHAR" required="false"/>
         <column name="opt_in_url" type="VARCHAR" required="false"/>
         <column name="opt_out_url" type="VARCHAR" required="false"/>
+        <column name="user_hash" type="VARCHAR" required="false"/>
     </table>
 
 </database>

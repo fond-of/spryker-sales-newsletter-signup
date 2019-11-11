@@ -24,8 +24,9 @@ class CustomerOptInOutUrlQuoteTransferExpanderPlugin extends AbstractPlugin impl
         if ($quoteTransfer->getSignupNewsletter() === true && $customer && $customer->getEmail()) {
             $newsletterService = $this->getFactory()->getNewsletterService();
             $params = [
-                $newsletterService->getNewsletterParamName() => sprintf('%s/%s', $this->getFactory()->getCurrentLanguage(), $newsletterService->getNewsletterParamName()),
-                $newsletterService->getNewsletterTokenParamName() => $newsletterService->getNewsletterService()->getHash($customer->getEmail())
+                'language' => $this->getFactory()->getCurrentLanguage(),
+                $newsletterService->getNewsletterParamName() => $newsletterService->getNewsletterParamName(),
+                $newsletterService->getNewsletterTokenParamName() => $newsletterService->getHash($customer->getEmail())
             ];
 
             $quoteTransfer->setOptInUrl($newsletterService->getOptInUrl($params));
