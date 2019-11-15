@@ -9,7 +9,7 @@ use Spryker\Client\Quote\Dependency\Plugin\QuoteTransferExpanderPluginInterface;
 /**
  * @method \FondOfSpryker\Client\SalesNewsletterSignup\SalesNewsletterSignupFactory getFactory()
  */
-class CustomerIpQuoteTransferExpanderPlugin extends AbstractPlugin implements QuoteTransferExpanderPluginInterface
+class CustomerHashQuoteTransferExpanderPlugin extends AbstractPlugin implements QuoteTransferExpanderPluginInterface
 {
     /**
      * @param  \Generated\Shared\Transfer\QuoteTransfer  $quoteTransfer
@@ -18,22 +18,11 @@ class CustomerIpQuoteTransferExpanderPlugin extends AbstractPlugin implements Qu
      */
     public function expandQuote(QuoteTransfer $quoteTransfer)
     {
-        $quoteTransfer->setIp($this->getCustomerIpAddress());
-
-        return $quoteTransfer;
-    }
-
-    /**
-     * @return string|null
-     */
-    protected function getCustomerIpAddress(): ?string
-    {
-        $ipAddress = $_SERVER['REMOTE_ADDR'];
-
-        if (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && $_SERVER['HTTP_X_FORWARDED_FOR']) {
-            $ipAddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        $customer = $quoteTransfer->getCustomer();
+        if ($quoteTransfer->getSignupNewsletter() === true && $customer && $customer->getEmail()) {
+            $quoteTransfer->setUserHash($this->getFactory()->getNewsletterService()->getHash($customer->getEmail()));
         }
 
-        return $ipAddress;
+        return $quoteTransfer;
     }
 }
