@@ -19,7 +19,7 @@ class CustomerHashQuoteTransferExpanderPlugin extends AbstractPlugin implements 
     public function expandQuote(QuoteTransfer $quoteTransfer)
     {
         $customer = $quoteTransfer->getCustomer();
-        if ($quoteTransfer->getSignupNewsletter() === true && $customer && $customer->getEmail()) {
+        if ($customer && $customer->getEmail()) {
             $quoteTransfer->setUserHash($this->getFactory()->getNewsletterService()->getHash($customer->getEmail()));
         }
 
