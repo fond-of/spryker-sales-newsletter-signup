@@ -23,7 +23,7 @@ class NewsletterSignupOrderExpanderPlugin implements OrderExpanderPreSavePluginI
     {
         $spySalesOrderEntityTransfer->setSignupNewsletter($quoteTransfer->getSignupNewsletter());
         $spySalesOrderEntityTransfer->setUserHash($quoteTransfer->getUserHash());
-        if ($quoteTransfer->getSignupNewsletter() === true){
+        if ($quoteTransfer->getSignupNewsletter() === true) {
             $spySalesOrderEntityTransfer->setIp($quoteTransfer->getIp());
             $spySalesOrderEntityTransfer->setOptInUrl($quoteTransfer->getOptInUrl());
             $spySalesOrderEntityTransfer->setOptOutUrl($quoteTransfer->getOptOutUrl());

@@ -12,7 +12,7 @@ use Spryker\Client\Quote\Dependency\Plugin\QuoteTransferExpanderPluginInterface;
 class CustomerHashQuoteTransferExpanderPlugin extends AbstractPlugin implements QuoteTransferExpanderPluginInterface
 {
     /**
-     * @param  \Generated\Shared\Transfer\QuoteTransfer  $quoteTransfer
+     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
      *
      * @return \Generated\Shared\Transfer\QuoteTransfer
      */

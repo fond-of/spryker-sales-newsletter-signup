@@ -2,11 +2,9 @@
 
 namespace FondOfSpryker\Client\SalesNewsletterSignup\Plugin;
 
-use FondOfSpryker\Service\Newsletter\NewsletterServiceInterface;
 use Generated\Shared\Transfer\QuoteTransfer;
 use Spryker\Client\Kernel\AbstractPlugin;
 use Spryker\Client\Quote\Dependency\Plugin\QuoteTransferExpanderPluginInterface;
-use Spryker\Shared\Kernel\Store;
 
 /**
  * @method \FondOfSpryker\Client\SalesNewsletterSignup\SalesNewsletterSignupFactory getFactory()
@@ -14,7 +12,7 @@ use Spryker\Shared\Kernel\Store;
 class CustomerOptInOutUrlQuoteTransferExpanderPlugin extends AbstractPlugin implements QuoteTransferExpanderPluginInterface
 {
     /**
-     * @param  \Generated\Shared\Transfer\QuoteTransfer  $quoteTransfer
+     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
      *
      * @return \Generated\Shared\Transfer\QuoteTransfer
      */
@@ -26,7 +24,7 @@ class CustomerOptInOutUrlQuoteTransferExpanderPlugin extends AbstractPlugin impl
             $params = [
                 'language' => $this->getFactory()->getCurrentLanguage(),
                 $newsletterService->getNewsletterParamName() => $newsletterService->getNewsletterParamName(),
-                $newsletterService->getNewsletterTokenParamName() => $newsletterService->getHash($customer->getEmail())
+                $newsletterService->getNewsletterTokenParamName() => $newsletterService->getHash($customer->getEmail()),
             ];
 
             $quoteTransfer->setOptInUrl($newsletterService->getOptInUrl($params));

@@ -4,14 +4,11 @@ namespace FondOfSpryker\Client\SalesNewsletterSignup;
 use FondOfSpryker\Service\Newsletter\NewsletterServiceInterface;
 use Spryker\Client\Kernel\AbstractFactory;
 use Spryker\Shared\Kernel\Store;
-use Spryker\Zed\Locale\Business\LocaleFacadeInterface;
-use Spryker\Zed\Store\Business\StoreFacadeInterface;
 
 class SalesNewsletterSignupFactory extends AbstractFactory
 {
     /**
      * @return \FondOfSpryker\Service\Newsletter\NewsletterServiceInterface
-     * @throws \Spryker\Client\Kernel\Exception\Container\ContainerKeyNotFoundException
      */
     public function getNewsletterService(): NewsletterServiceInterface
     {
@@ -34,4 +31,3 @@ class SalesNewsletterSignupFactory extends AbstractFactory
         return $this->getStore()->getCurrentLanguage();
     }
 }
-    

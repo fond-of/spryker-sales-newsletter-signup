@@ -7,9 +7,6 @@
 
 namespace FondOfSpryker\Client\SalesNewsletterSignup;
 
-use Spryker\Client\SalesNewsletterSignup\Dependency\Client\SalesNewsletterSignupToLocaleBridge;
-use Spryker\Client\SalesNewsletterSignup\Dependency\Client\SalesNewsletterSignupToStorageBridge;
-use Spryker\Client\SalesNewsletterSignup\Dependency\Client\SalesNewsletterSignupToZedRequestClientBridge;
 use Spryker\Client\Kernel\AbstractDependencyProvider;
 use Spryker\Client\Kernel\Container;
 
