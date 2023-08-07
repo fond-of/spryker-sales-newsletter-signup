@@ -8,7 +8,7 @@ use Spryker\Zed\CheckoutRestApiExtension\Dependency\Plugin\QuoteMapperPluginInte
 use Spryker\Zed\Kernel\Communication\AbstractPlugin;
 
 /**
- * @method \FondOfSpryker\Client\SalesNewsletterSignup\SalesNewsletterSignupFactory getFactory()
+ * @method \FondOfSpryker\Zed\SalesNewsletterSignup\Communication\SalesNewsletterSignupCommunicationFactory getFactory()
  */
 class CustomerHashCheckoutQuoteMapPlugin extends AbstractPlugin implements QuoteMapperPluginInterface
 {
