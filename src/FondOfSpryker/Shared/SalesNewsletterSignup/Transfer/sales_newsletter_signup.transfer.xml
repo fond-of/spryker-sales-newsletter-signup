@@ -14,7 +14,7 @@
 
     <transfer name="RestCheckoutRequestAttributes">
         <property name="customer" type="RestCustomer" restRequestParameter="yes"/>
-        <property name="signupNewsletter" type="bool"/>
+        <property name="signupNewsletter" type="bool" restRequestParameter="yes"/>
     </transfer>
 
     <transfer name="RestCustomer">
