@@ -28,7 +28,7 @@ class CustomerOptInOptOutUrlQuoteMapPlugin extends AbstractPlugin implements Quo
                 $newsletterService->getNewsletterParamName() => $newsletterService->getNewsletterParamName(),
                 $newsletterService->getNewsletterTokenParamName() => $newsletterService->getHash($customer->getEmail()),
             ];
-
+            $quoteTransfer->setSignupNewsletter(true);
             $quoteTransfer->setOptInUrl($newsletterService->getOptInUrl($params));
             $quoteTransfer->setOptOutUrl($newsletterService->getOptOutUrl($params));
         }
