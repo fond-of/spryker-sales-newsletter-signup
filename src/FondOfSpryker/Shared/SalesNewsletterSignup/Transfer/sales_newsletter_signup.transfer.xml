@@ -10,4 +10,13 @@
         <property name="ip" type="string"/>
         <property name="userHash" type="string"/>
     </transfer>
+
+    <transfer name="RestCheckoutRequestAttributes">
+        <property name="customer" type="RestCustomer" restRequestParameter="yes"/>
+        <property name="signupNewsletter" type="bool" restRequestParameter="yes"/>
+    </transfer>
+
+    <transfer name="RestCustomer">
+        <property name="email" type="string" restRequestParameter="yes"/>
+    </transfer>
 </transfers>
