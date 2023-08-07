@@ -11,7 +11,6 @@
         <property name="userHash" type="string"/>
     </transfer>
 
-
     <transfer name="RestCheckoutRequestAttributes">
         <property name="customer" type="RestCustomer" restRequestParameter="yes"/>
         <property name="signupNewsletter" type="bool" restRequestParameter="yes"/>
